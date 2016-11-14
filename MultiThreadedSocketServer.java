@@ -11,13 +11,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
  
  
-public class MultiThreadedSocketServer {
+public class AllServer {
  
     ServerSocket myServerSocket;
     boolean ServerOn = true;
  
  
-    public MultiThreadedSocketServer() 
+    public AllServer() 
     { 
         try
         { 
@@ -87,7 +87,7 @@ public class MultiThreadedSocketServer {
  
     public static void main (String[] args) 
     { 
-        new MultiThreadedSocketServer();        
+        new AllServer();        
     } 
  
  

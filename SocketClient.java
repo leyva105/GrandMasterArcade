@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*; 
  
 // A client for our Multithreaded SocketServer. 
-public class SocketClient
+public class AllClient
 { 
    
     public static void main(String[] args)
