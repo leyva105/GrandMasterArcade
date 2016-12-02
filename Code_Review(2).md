@@ -1,3 +1,5 @@
+Code Reviewer: James Senior
+
 On a scale of 1 to 5, I give this code a rating of 4 based on the following criteria:
 
 1  The program has syntax errors and does not compile, or the project does not provide sufficient information to instal necessary dependencies.
