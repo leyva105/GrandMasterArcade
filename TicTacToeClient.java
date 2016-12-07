@@ -163,7 +163,7 @@ public class TicTacToeClient {
             String serverAddress = (args.length == 0) ? "localhost" : args[1];
             TicTacToeClient client = new TicTacToeClient(serverAddress);
             client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            client.frame.setSize(240, 160);
+            client.frame.setSize(540, 700);
             client.frame.setVisible(true);
             client.frame.setResizable(false);
             client.play();
