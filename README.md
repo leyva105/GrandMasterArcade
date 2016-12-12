@@ -1,5 +1,5 @@
 # GrandMasterArcade
-Multi-Threading Program w/ Text Based Games
+Multi-Threading Programs
 
 
 Grand Master Arcade: Arcade for the Masters
@@ -33,3 +33,6 @@ Modifications that were made and Notable errors for each program:
     - The TicTacToe game has a problem when it comes to viewing the individual marks for each player. The "x's" and "o's" do not appear. I will be fixing that this weekend (Dec.2 - 4).
     - New Hangman Game will be added this weekend ^^^ as well, with only game implementation. The messenger will come hopefully that monday so it is fully functioning.
     - I've yet to decide how I will go about making a main screen for the games or if it will be just something simple where both games are easily accessible and nothing too fancy. (Soon to come).
+How to run each program:
+
+    - compile with javac and run the server on one terminal or command prompt window then two more windows will be used for the clients.
