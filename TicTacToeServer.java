@@ -6,23 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * A server for a network multi-player tic tac toe game.  Modified and
- * extended from the class presented in Deitel and Deitel "Java How to
- * Program" book.  I made a bunch of enhancements and rewrote large sections
- * of the code.  The main change is instead of passing *data* between the
- * client and server, I made a TTTP (tic tac toe protocol) which is totally
- * plain text, so you can test the game with Telnet (always a good idea.)
- * The strings that are sent in TTTP are:
- *
- *  Client -> Server           Server -> Client
- *  ----------------           ----------------
- *  MOVE <n>  (0 <= n <= 8)    WELCOME <char>  (char in {X, O})
- *  QUIT                       VALID_MOVE
- *                             OTHER_PLAYER_MOVED <n>
- *                             VICTORY
- *                             DEFEAT
- *                             TIE
- *                             MESSAGE <text>
+ * A server for a network multi-player tic tac toe game. 
  *
  * A second change is that it allows an unlimited number of pairs of
  * players to play.
@@ -146,8 +130,7 @@ class Game {
             this.socket = socket;
             this.mark = mark;
             try {
-                input = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
+                input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 output = new PrintWriter(socket.getOutputStream(), true);
                 output.println("WELCOME " + mark);
                 output.println("MESSAGE Waiting for opponent to connect");
@@ -168,19 +151,18 @@ class Game {
          */
         public void otherPlayerMoved(int location) {
             output.println("OPPONENT_MOVED " + location);
-            output.println(
-                hasWinner() ? "DEFEAT" : fillBoard() ? "TIE" : "");
+            output.println(hasWinner() ? "DEFEAT" : fillBoard() ? "TIE" : "");
         }
 
         /**
-         * The run method of this thread.
+         * Each thread has a run method
          */
         public void run() {
             try {
-                // The thread is only started after everyone connects.
+                // Thread starts after all have connected
                 output.println("MESSAGE All players connected");
 
-                // Tell the first player that it is her turn.
+                // Tell the first player that it is their turn.
                 if (mark == 'X') {
                     output.println("MESSAGE Your move");
                 }
